@@ -32,9 +32,9 @@ function verifyJWT(req, res, next) {
 async function run() {
     try {
         await client.connect();
-        const serviceCollection = client.db('intelligent_tools').collection('products');
-        const buyingCollection = client.db('intelligent_tools').collection('buying');
-        const userCollection = client.db('intelligent_tools').collection('users');
+        const serviceCollection = client.db('ek-car-parts').collection('products');
+        const buyingCollection = client.db('ek-car-parts').collection('buying');
+        const userCollection = client.db('ek-car-parts').collection('users');
 
         app.get('/product', async (req, res) => {
             const query = {};
@@ -119,11 +119,11 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-    res.send('Hello intelligent tools');
+    res.send('Hello ek car product');
 });
 
 app.listen(port, () => {
-    console.log(`Intelligent App listening on port ${port}`);
+    console.log(`ek car product App listening on port ${port}`);
 });
 
 
